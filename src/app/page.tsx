@@ -2,24 +2,19 @@
 
 import {personalizedGreeting} from '@/ai/flows/personalized-greeting';
 import {suggestSkills} from '@/ai/flows/suggest-skills';
-import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
 import {Button} from '@/components/ui/button';
+import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
 import {ExternalLink} from 'lucide-react';
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarGroup,
-  SidebarGroupLabel,
-  SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarProvider,
-} from '@/components/ui/sidebar';
 import {useEffect, useState} from 'react';
+import {ScrollArea} from "@/components/ui/scroll-area";
+import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
+import {Globe, Mail, Phone, Github, Linkedin, GraduationCap, Briefcase, Code, Lightbulb, BookOpen} from 'lucide-react';
+import {cn} from "@/lib/utils";
+import Link from "next/link";
 
 const resumeOcrData = {
+  name: 'Marhaf Chamie',
+  title: 'Senior AI & Software Engineer',
   summary:
     'Senior Software Engineer with 10 years of hands-on experience delivering full-stack, mobile, and backend systems across fintech, e-commerce, mobility, and SaaS. Specialized in React, React Native, TypeScript, Node.js, and cloud platforms (AWS, GCP, Azure). Proven leadership in building apps from zero to launch, leading engineering teams, and integrating advanced APIs such as ChatGPT APIs, Gemini APIs, Grok APIs, and Bluetooth SDKs. Strong remote track record (8 years) and a history of innovation—transforming underperforming systems into scalable, high-performance platforms.',
   experience: [
@@ -203,8 +198,6 @@ const resumeOcrData = {
     portfolio: 'https://marhaf-syed.com',
     selfIntroduction: 'https://marhaf-syed.com/about',
   },
-  name: 'Marhaf Chamie',
-  title: 'Senior AI & Software Engineer',
 };
 
 async function getSuggestedSkills(jobDescriptions: string) {
@@ -222,12 +215,6 @@ export default function Home() {
   const [suggestedSkills, setSuggestedSkills] = useState<string[]>([]);
   const [personalizedGreetingMessage, setPersonalizedGreetingMessage] = useState<string>('');
 
-  const [selectedSection, setSelectedSection] = useState('Summary');
-
-  useEffect(() => {
-    console.log('Selected section:', selectedSection);
-  }, [selectedSection]);
-
   useEffect(() => {
     const loadData = async () => {
       const skills = await getSuggestedSkills(resumeOcrData.jobDescriptions);
@@ -241,158 +228,368 @@ export default function Home() {
   }, []);
 
   return (
-    <SidebarProvider>
-      <Sidebar variant="inset" collapsible="icon">
-        <SidebarHeader>
-          <img
-            src="https://avatars.githubusercontent.com/u/6199549?v=4"
-            alt="Profile"
-            className="rounded-full h-10 w-10 mx-auto mb-2"
-          />
-          <div className="text-center">
-            <h2 className="text-lg font-semibold">{resumeOcrData.name}</h2>
-            <p className="text-sm text-muted-foreground">{resumeOcrData.title}</p>
+    <div className="bg-background min-h-screen font-sans antialiased">
+      {/* Hero Section */}
+      <section
+        id="hero"
+        className="relative py-24 bg-primary text-primary-foreground text-center"
+      >
+        <div className="container mx-auto px-4">
+          <Avatar className="w-32 h-32 rounded-full mx-auto mb-4">
+            <AvatarImage src="https://avatars.githubusercontent.com/u/6199549?v=4" alt={resumeOcrData.name} />
+            <AvatarFallback>{resumeOcrData.name.substring(0, 2)}</AvatarFallback>
+          </Avatar>
+          <h1 className="text-4xl font-bold">{resumeOcrData.name}</h1>
+          <p className="text-lg mt-2">{resumeOcrData.title}</p>
+          <p className="text-md mt-2">"{personalizedGreetingMessage}"</p>
+          <div className="mt-8">
+            <Button asChild>
+              <Link href={resumeOcrData.externalLinks.portfolio} className="mr-4">
+                View Portfolio
+              </Link>
+            </Button>
+            <Button variant="outline">Contact Me</Button>
           </div>
-        </SidebarHeader>
-        <SidebarContent>
-          <SidebarMenu>
-            <SidebarMenuItem>
-              <SidebarMenuButton onClick={() => setSelectedSection('Summary')}>
-                Summary
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton onClick={() => setSelectedSection('Experience')}>
+        </div>
+      </section>
+
+      {/* Navigation */}
+      <nav className="bg-secondary text-secondary-foreground py-4 sticky top-0 z-10">
+        <div className="container mx-auto px-4">
+          <ul className="flex justify-center space-x-6">
+            <li>
+              <a href="#about" className="hover:text-primary transition-colors">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#experience" className="hover:text-primary transition-colors">
                 Experience
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton onClick={() => setSelectedSection('Links')}>
-                External Links
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton onClick={() => setSelectedSection('Skills')}>
+              </a>
+            </li>
+            <li>
+              <a href="#projects" className="hover:text-primary transition-colors">
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="#skills" className="hover:text-primary transition-colors">
                 Skills
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-          </SidebarMenu>
-        </SidebarContent>
-        <SidebarFooter>
-          <p className="text-center text-xs text-muted-foreground">
-            © {new Date().getFullYear()} {resumeOcrData.name}
-          </p>
-        </SidebarFooter>
-      </Sidebar>
-      <div className="md:pl-[16rem] p-4">
-        {/* Introduction Card */}
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle>Welcome!</CardTitle>
-            <CardDescription>{personalizedGreetingMessage}</CardDescription>
-          </CardHeader>
-        </Card>
+              </a>
+            </li>
+            <li>
+              <a href="#contact" className="hover:text-primary transition-colors">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
-        {/* Conditionally render content based on selected section */}
-        {selectedSection === 'Summary' && (
-          <Card className="mb-8">
-            <CardHeader>
-              <CardTitle>Summary</CardTitle>
-              <CardDescription>{resumeOcrData.summary}</CardDescription>
-            </CardHeader>
-          </Card>
-        )}
+      {/* About Me Section */}
+      <section id="about" className="py-16">
+        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h2 className="text-3xl font-semibold mb-4">About Me</h2>
+            <p>{resumeOcrData.summary}</p>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold mb-2">Details</h3>
+            <ul>
+              <li className="mb-2 flex items-center">
+                <Globe className="mr-2 h-4 w-4 text-muted-foreground" />
+                Location: {resumeOcrData.contact.location}
+              </li>
+              <li className="mb-2 flex items-center">
+                <Mail className="mr-2 h-4 w-4 text-muted-foreground" />
+                Email: {resumeOcrData.contact.email}
+              </li>
+              <li className="mb-2 flex items-center">
+                <Phone className="mr-2 h-4 w-4 text-muted-foreground" />
+                Phone: {resumeOcrData.contact.phone}
+              </li>
+              <li className="mb-2 flex items-center">
+                <Linkedin className="mr-2 h-4 w-4 text-muted-foreground" />
+                <a href={resumeOcrData.social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-primary">LinkedIn</a>
+              </li>
+              <li className="mb-2 flex items-center">
+                <Github className="mr-2 h-4 w-4 text-muted-foreground" />
+                <a href={resumeOcrData.social.github} target="_blank" rel="noopener noreferrer" className="hover:text-primary">GitHub</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-        {selectedSection === 'Experience' && (
-          <Card className="mb-8">
-            <CardHeader>
-              <CardTitle>Experience Timeline</CardTitle>
-            </CardHeader>
-            <CardContent>
+      {/* Experience Section */}
+      <section id="experience" className="py-16 bg-secondary">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-semibold mb-8 text-center">Experience</h2>
+          <ScrollArea className="h-[400px]">
+            <div className="grid gap-6">
               {resumeOcrData.experience.map((exp, index) => (
-                <div key={index} className="mb-4">
-                  <h3 className="text-lg font-semibold">{exp.company}</h3>
-                  <p className="text-sm text-muted-foreground">
-                    {exp.role} ({exp.years})
-                  </p>
-                  <ul className="list-disc pl-5 mt-2">
-                    {exp.responsibilities.map((resp, index) => (
-                      <li key={index}>{resp}</li>
-                    ))}
-                  </ul>
-                </div>
+                <Card key={index}>
+                  <CardHeader>
+                    <CardTitle className="flex items-center">
+                      <Briefcase className="mr-2 h-5 w-5" />
+                      {exp.company}
+                    </CardTitle>
+                    <CardDescription>
+                      {exp.role} ({exp.years})
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="list-disc pl-5">
+                      {exp.responsibilities.map((resp, i) => (
+                        <li key={i}>{resp}</li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
               ))}
-            </CardContent>
-          </Card>
-        )}
+            </div>
+          </ScrollArea>
+        </div>
+      </section>
 
-        {selectedSection === 'Links' && (
-          <Card className="mb-8">
-            <CardHeader>
-              <CardTitle>External Links</CardTitle>
-              <CardDescription>Connect with me on these platforms.</CardDescription>
-            </CardHeader>
-            <CardContent className="flex flex-col gap-2">
-              <Button asChild>
-                <a
-                  href={resumeOcrData.externalLinks.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
-                >
-                  LinkedIn <ExternalLink className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button asChild>
-                <a
-                  href={resumeOcrData.externalLinks.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
-                >
-                  GitHub <ExternalLink className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button asChild>
-                <a
-                  href={resumeOcrData.externalLinks.portfolio}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
-                >
-                  Portfolio <ExternalLink className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button asChild>
-                <a
-                  href={resumeOcrData.externalLinks.selfIntroduction}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
-                >
-                  Self-Introduction <ExternalLink className="h-4 w-4" />
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-        )}
+      {/* Projects Section */}
+      <section id="projects" className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-semibold mb-8 text-center">Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card>
+              <CardHeader>
+                <CardTitle>Awaneek.com</CardTitle>
+                <CardDescription>E-commerce platform using AI to verify product legality</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>Tech: React, Node.js, AI</p>
+                <Button asChild variant="outline">
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    View Project <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Ammerny.com</CardTitle>
+                <CardDescription>Mobile app for tracking service requests from initiation to delivery</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>Tech: React Native, Firebase</p>
+                <Button asChild variant="outline">
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    View Project <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Qaf.com</CardTitle>
+                <CardDescription>Enterprise system digitizing paper-based operations</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>Tech: Angular, Java</p>
+                <Button asChild variant="outline">
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    View Project <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
 
-        {selectedSection === 'Skills' && (
+      {/* Skills Section */}
+      <section id="skills" className="py-16 bg-secondary">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-semibold mb-8 text-center">Skills</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Frontend</h3>
+              <ul className="list-none pl-0">
+                {resumeOcrData.skills
+                  .filter(skill => ['React', 'React Native', 'Angular'].includes(skill))
+                  .map((skill, index) => (
+                    <li key={index} className="mb-1 flex items-center">
+                      <Code className="mr-2 h-4 w-4 text-muted-foreground" />
+                      {skill}
+                    </li>
+                  ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Backend</h3>
+              <ul className="list-none pl-0">
+                {resumeOcrData.skills
+                  .filter(skill => ['Node.js', 'ExpressJS'].includes(skill))
+                  .map((skill, index) => (
+                    <li key={index} className="mb-1 flex items-center">
+                      <Code className="mr-2 h-4 w-4 text-muted-foreground" />
+                      {skill}
+                    </li>
+                  ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Languages</h3>
+              <ul className="list-none pl-0">
+                {resumeOcrData.skills
+                  .filter(skill => ['JavaScript', 'TypeScript'].includes(skill))
+                  .map((skill, index) => (
+                    <li key={index} className="mb-1 flex items-center">
+                      <Code className="mr-2 h-4 w-4 text-muted-foreground" />
+                      {skill}
+                    </li>
+                  ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Databases</h3>
+              <ul className="list-none pl-0">
+                {resumeOcrData.skills
+                  .filter(skill => ['PostgreSQL', 'MySQL', 'Firebase', 'MongoDB'].includes(skill))
+                  .map((skill, index) => (
+                    <li key={index} className="mb-1 flex items-center">
+                      {/* Replace with database icon */}
+                      <Code className="mr-2 h-4 w-4 text-muted-foreground" />
+                      {skill}
+                    </li>
+                  ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Cloud</h3>
+              <ul className="list-none pl-0">
+                {resumeOcrData.skills
+                  .filter(skill => ['AWS', 'GCP', 'Azure'].includes(skill))
+                  .map((skill, index) => (
+                    <li key={index} className="mb-1 flex items-center">
+                      {/* Replace with cloud icon */}
+                      <Code className="mr-2 h-4 w-4 text-muted-foreground" />
+                      {skill}
+                    </li>
+                  ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Tools &amp; DevOps</h3>
+              <ul className="list-none pl-0">
+                {resumeOcrData.skills
+                  .filter(skill => ['GitHub', 'GitLab', 'Jenkins', 'CI/CD', 'Docker', 'OAuth', 'Jira', 'Miro', 'Figma'].includes(skill))
+                  .map((skill, index) => (
+                    <li key={index} className="mb-1 flex items-center">
+                      {/* Replace with tool icon */}
+                      <Code className="mr-2 h-4 w-4 text-muted-foreground" />
+                      {skill}
+                    </li>
+                  ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-2">APIs &amp; Integrations</h3>
+              <ul className="list-none pl-0">
+                {resumeOcrData.skills
+                  .filter(skill => ['ChatGPT', 'Gemini API', 'Stripe', 'Plaid', 'Checkr', 'ClearMe', 'Google Maps', 'Sentry'].includes(skill))
+                  .map((skill, index) => (
+                    <li key={index} className="mb-1 flex items-center">
+                      {/* Replace with api icon */}
+                      <Code className="mr-2 h-4 w-4 text-muted-foreground" />
+                      {skill}
+                    </li>
+                  ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Leadership &amp; Soft Skills</h3>
+              <ul className="list-none pl-0">
+                {resumeOcrData.skills
+                  .filter(skill => ['Team Leadership', 'System Architecture', 'Cross-Functional Collaboration', 'Agile Delivery'].includes(skill))
+                  .map((skill, index) => (
+                    <li key={index} className="mb-1 flex items-center">
+                      {/* Replace with leadership icon */}
+                      <Lightbulb className="mr-2 h-4 w-4 text-muted-foreground" />
+                      {skill}
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section id="education" className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-semibold mb-8 text-center">Education</h2>
           <Card>
             <CardHeader>
-              <CardTitle>Skills</CardTitle>
-              <CardDescription>Here's a list of my skills:</CardDescription>
+              <CardTitle className="flex items-center">
+                <GraduationCap className="mr-2 h-5 w-5" />
+                Bachelor of Science in Computer Science
+              </CardTitle>
+              <CardDescription>UIAM University</CardDescription>
             </CardHeader>
             <CardContent>
-              <ul className="list-disc pl-5">
-                {resumeOcrData.skills.map((skill, index) => (
-                  <li key={index}>{skill}</li>
-                ))}
-              </ul>
+              <p>B.S Computer Science with GCP 3.72 / 4</p>
             </CardContent>
           </Card>
-        )}
-      </div>
-    </SidebarProvider>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-16 bg-secondary">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-semibold mb-8 text-center">Contact</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <p>Feel free to reach out!</p>
+              <ul className="mt-4">
+                <li className="mb-2 flex items-center">
+                  <Mail className="mr-2 h-4 w-4 text-muted-foreground" />
+                  <a href={`mailto:${resumeOcrData.contact.email}`} className="hover:text-primary">
+                    {resumeOcrData.contact.email}
+                  </a>
+                </li>
+                <li className="mb-2 flex items-center">
+                  <Phone className="mr-2 h-4 w-4 text-muted-foreground" />
+                  {resumeOcrData.contact.phone}
+                </li>
+                <li className="mb-2 flex items-center">
+                  <Globe className="mr-2 h-4 w-4 text-muted-foreground" />
+                  {resumeOcrData.contact.location}
+                </li>
+                <li className="mb-2 flex items-center">
+                  <Linkedin className="mr-2 h-4 w-4 text-muted-foreground" />
+                  <a href={resumeOcrData.social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-primary">LinkedIn</a>
+                </li>
+                <li className="mb-2 flex items-center">
+                  <Github className="mr-2 h-4 w-4 text-muted-foreground" />
+                  <a href={resumeOcrData.social.github} target="_blank" rel="noopener noreferrer" className="hover:text-primary">GitHub</a>
+                </li>
+              </ul>
+            </div>
+            {/* Optional Contact Form */}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-6 text-center text-muted-foreground border-t">
+        <div className="container mx-auto px-4">
+          <p>
+            © {new Date().getFullYear()} {resumeOcrData.name}. All rights reserved.
+          </p>
+          <p>
+            <a href="#hero" className="hover:text-primary transition-colors">
+              Back to Top
+            </a>
+          </p>
+        </div>
+      </footer>
+    </div>
   );
 }

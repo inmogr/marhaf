@@ -1,0 +1,35 @@
+name: Deploy to Firebase Hosting on merge
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build_and_deploy:
+        runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: ./
+
+        steps:
+            - name: Initiate Repo
+              uses: actions/checkout@v4
+
+            - name: Chose Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+
+            - name: Install packages
+              run: yarn
+
+            - name: Build repo
+              run: yarn build
+
+            - name: Deploy app
+              uses: FirebaseExtended/action-hosting-deploy@v0
+              with:
+                  repoToken: ${{ secrets.GITHUB_TOKEN }}
+                  firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MARHAFS_PORTFOLIO }}
+                  channelId: live
+                  projectId: marhafs-portfolio

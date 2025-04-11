@@ -191,6 +191,165 @@ const resumeOcrData = {
     },
 };
 
+const techIcons = [
+    {
+        name: "React Native",
+        src: "https://cdn.worldvectorlogo.com/logos/react-native-1.svg",
+    },
+    {
+        name: "React",
+        src: "https://cdn.worldvectorlogo.com/logos/react-2.svg",
+    },
+    {
+        name: "ExpressJS",
+        src: "https://icon.icepanel.io/Technology/png-shadow-512/Express.png",
+    },
+    {
+        name: "TypeScript",
+        src: "https://cdn.worldvectorlogo.com/logos/typescript.svg",
+    },
+    {
+        name: "JavaScript",
+        src: "https://cdn.worldvectorlogo.com/logos/javascript-2.svg",
+    },
+    {
+        name: "ChatGPT API",
+        src: "https://cdn.worldvectorlogo.com/logos/chatgpt-6.svg",
+    },
+    {
+        name: "Grok API",
+        src: "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/grok.png",
+    },
+    {
+        name: "Gemini API",
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Google_Gemini_logo.svg/688px-Google_Gemini_logo.svg.png",
+    },
+    {
+        name: "Ollama",
+        src: "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/ollama.png",
+    },
+    {
+        name: "HuggingFace",
+        src: "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg",
+    },
+    {
+        name: "Slack Bot",
+        src: "https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg",
+    },
+    {
+        name: "Telegram Bot",
+        src: "https://cdn.worldvectorlogo.com/logos/telegram-1.svg",
+    },
+    {
+        name: "Shell Script Writing",
+        src: "https://cdn.worldvectorlogo.com/logos/bash-2.svg",
+    },
+    {
+        name: "GitHub Actions",
+        src: "https://cdn.worldvectorlogo.com/logos/github-icon-1.svg",
+    },
+    {
+        name: "Jenkins",
+        src: "https://cdn.worldvectorlogo.com/logos/jenkins-1.svg",
+    },
+    {
+        name: "Google Cloud",
+        src: "https://cdn.worldvectorlogo.com/logos/google-cloud-2.svg",
+    },
+    {
+        name: "AWS",
+        src: "https://cdn.worldvectorlogo.com/logos/aws-2.svg",
+    },
+    {
+        name: "Azure",
+        src: "https://cdn.worldvectorlogo.com/logos/azure-1.svg",
+    },
+    {
+        name: "Firebase",
+        src: "https://cdn.worldvectorlogo.com/logos/firebase-2.svg",
+    },
+    {
+        name: "Jira",
+        src: "https://cdn.worldvectorlogo.com/logos/jira-1.svg",
+    },
+    {
+        name: "Scrum",
+        src: "https://cdn.worldvectorlogo.com/logos/scrum-1.svg",
+    },
+    {
+        name: "Agile",
+        src: "https://cdn.worldvectorlogo.com/logos/agile-software.svg",
+    },
+    {
+        name: "NPM",
+        src: "https://icon.icepanel.io/Technology/svg/NPM.svg",
+    },
+    {
+        name: "Redux",
+        src: "https://icon.icepanel.io/Technology/svg/Redux.svg",
+    },
+    {
+        name: "Vite",
+        src: "https://icon.icepanel.io/Technology/svg/Vite.js.svg",
+    },
+    {
+        name: "Nginx",
+        src: "https://icon.icepanel.io/Technology/svg/NGINX.svg",
+    },
+    {
+        name: "Docker",
+        src: "https://icon.icepanel.io/Technology/svg/Docker.svg",
+    },
+    {
+        name: "Android",
+        src: "https://icon.icepanel.io/Technology/png-shadow-512/Android-Studio.png",
+    },
+    {
+        name: "Cloudflare",
+        src: "https://icon.icepanel.io/Technology/svg/Cloudflare.svg",
+    },
+    {
+        name: "EsLint",
+        src: "https://icon.icepanel.io/Technology/svg/ESLint.svg",
+    },
+    {
+        name: "Chrome Extension",
+        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREHWmJqswjeSOHOsd8u_zIK6Fe8_rBiJDqsQ&s",
+    },
+    {
+        name: "Chrome Extension",
+        src: "https://icon.icepanel.io/Technology/svg/Chrome.svg",
+    },
+    {
+        name: "GitLab",
+        src: "https://icon.icepanel.io/Technology/svg/GitLab.svg",
+    },
+    {
+        name: "GraphQL",
+        src: "https://icon.icepanel.io/Technology/svg/GraphQL.svg",
+    },
+    {
+        name: "Markdown",
+        src: "https://icon.icepanel.io/Technology/png-shadow-512/Markdown.png",
+    },
+    {
+        name: "Linux",
+        src: "https://icon.icepanel.io/Technology/png-shadow-512/Linux.png",
+    },
+    {
+        name: "MaterialUI",
+        src: "https://icon.icepanel.io/Technology/svg/Material-UI.svg",
+    },
+    {
+        name: "Postman",
+        src: "https://icon.icepanel.io/Technology/svg/Postman.svg",
+    },
+    {
+        name: "BitBucket",
+        src: "https://icon.icepanel.io/Technology/svg/BitBucket.svg",
+    },
+];
+
 export default function Home() {
     return (
         <div className="bg-background min-h-screen font-sans antialiased">
@@ -493,6 +652,25 @@ export default function Home() {
                                     ))}
                             </ul>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Tech Icons Section */}
+            <section id="techicons" className="py-16">
+                <div className="container mx-auto px-4">
+                    <h2 className="text-3xl font-semibold mb-8 text-center">Technologies</h2>
+                    <div className="flex flex-wrap justify-center gap-16">
+                        {techIcons.map((icon, index) => (
+                            <div key={index} className="w-20 h-20 relative flex flex-row items-center justify-center">
+                                <img
+                                    src={icon.src}
+                                    alt={icon.name}
+                                    style={{ objectFit: "contain" }}
+                                    sizes="(max-width: 768px) 20vw, (max-width: 1200px) 10vw, 5vw"
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>

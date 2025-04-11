@@ -1,99 +1,108 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# Marhaf Chamie
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+**Senior AI & Software Engineer**  
+AI | Full Stack | React | React Native | TypeScript | Node.js | Cloud Engineering  
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
+📧 hireme2025apr@inmogr.aleeas.com  
 
-## 🚀 Quick start
+🔗 [LinkedIn](https://linkedin.com/in/inmogr) | [GitHub](https://github.com/inmogr) | [Self-Introduction](https://drive.google.com/file/d/1VWf9650iOwe2kug9WfWUYVHNkprSPN5b/view?usp=sharing)
 
-1.  **Create a Gatsby site.**
+---
 
-    Use the Gatsby CLI ([install instructions](https://www.gatsbyjs.com/docs/tutorial/getting-started/part-0/#gatsby-cli)) to create a new site, specifying the default starter.
+## 👨‍💻 About Me
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+Senior Software Engineer with 10 years of experience delivering full-stack, mobile, and backend systems across fintech, e-commerce, mobility, and SaaS. Specialized in React, React Native, TypeScript, Node.js, and cloud platforms (AWS, GCP, Azure). Proven leadership in building apps from scratch, leading teams, and integrating APIs like ChatGPT, Gemini, Grok, and Bluetooth SDKs. Strong remote work background (8 years) and a knack for transforming underperforming systems into scalable platforms.
 
-1.  **Start developing.**
+---
 
-    Navigate into your new site’s directory and start it up.
+## 💼 Experience
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+### INMOGR, Dubai, UAE  
+**Senior AI Engineer** (May 2024 – Present)  
+- Built automated AI pipeline to generate video scripts and videos daily  
+- Developed SEO metadata generation engine using AI  
+- Scheduled uploads via Google APIs  
+- Created a Selenium-based liveliness checker for YouTube channels  
+- Deployed all systems on Raspberry Pi 5  
 
-1.  **Open the source code and start editing!**
+### [EnvoyThere](https://www.envoythere.com/), Los Angeles, USA  
+**Senior Full Stack Engineer – BlinkMobility** (Sep 2022 – May 2024)  
+- Rebuilt rental platform for scale and reliability  
+- Migrated app from Expo/JS to React Native/TypeScript  
+- Created Bluetooth SDK for vehicle control  
+- Integrated KYC onboarding via ClearMe and Checkr  
+- Deployed systems using AWS, Firebase, PostgreSQL  
+- [Play Store](https://play.google.com/store/apps/details?id=com.envoythere.envoy.blink&hl=en)  
 
-    Your site is now running at `http://localhost:8000`!
+### [Noumena](https://www.linkedin.com/company/noumenapro/), Miami, USA  
+**Senior Full Stack Engineer – Noumenati** (Dec 2020 – Aug 2022)  
+- Built KYC loan workflows  
+- Developed mobile video streaming for Android/iOS  
+- Designed drag-and-drop social profile builder  
+- Increased user engagement by 30%  
+- [Play Store](https://play.google.com/store/apps/details?id=global.noumena.communityconnect&hl=en_IN)
 
-    Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby Tutorial](https://www.gatsbyjs.com/docs/tutorial/getting-started/part-4/#use-graphiql-to-explore-the-data-layer-and-write-graphql-queries).
+### [Aleph-Labs](https://aleph-labs.com/), Kuala Lumpur, Malaysia  
+**Senior Frontend Engineer** (May 2019 – Dec 2020)  
+- Developed banking apps for:  
+  - [CIMB Bank](https://play.google.com/store/apps/details?id=com.cimb.cimbocto&hl=en)  
+  - [RHB Bank](https://play.google.com/store/apps/details?id=com.rhbgroup.rhbmobilebanking&hl=en)  
+  - [AM Bank](https://apps.apple.com/my/app/amonline/id1514166708)  
+  - [In1Bank](https://apps.apple.com/au/app/in1bank/id1532867134)  
+  - [TnG E-Wallet](https://play.google.com/store/apps/details?id=my.com.tngdigital.ewallet&hl=en)  
+- Implemented digital KYC  
+- Led a team of 5 engineers  
+- Built secure admin portals  
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+### [Episub](https://episub.com/), Sydney, Australia  
+**Full Stack Engineer** (Sep 2018 – May 2019)  
+- Developed web apps with React and Node.js  
+- Delivered intuitive UIs and robust APIs  
+- Used Agile with Scrum and Jira  
 
-## 🚀 Quick start (Netlify)
+### [Avtian](https://avtian.com/), Houston, Texas, USA  
+**Frontend Engineer** (May 2018 – Sep 2018)  
+- Developed cross-browser UI with React  
+- Focused on usability and front-end architecture  
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+### [Freelancer](https://freelancer.com/), Kuala Lumpur, Malaysia  
+**Full Stack Engineer** (Dec 2015 – Jun 2017)  
+- Delivered Java web app for condo management  
+- Managed full lifecycle from development to deployment  
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+---
 
-## 🧐 What's inside?
+## 🛠️ Skills
 
-A quick look at the top-level files and directories you'll see in a typical Gatsby project.
+- **Frontend**: React, React Native, Angular  
+- **Backend**: Node.js, Express.js  
+- **Languages**: JavaScript, TypeScript  
+- **Databases**: PostgreSQL, MySQL, Firebase, MongoDB  
+- **Cloud**: AWS, GCP, Azure  
+- **APIs**: ChatGPT, Gemini, Stripe, Plaid, Checkr, ClearMe, Google Maps, Sentry  
+- **DevOps & Tools**: GitHub, GitLab, Jenkins, CI/CD, Docker, OAuth, Jira, Miro, Figma  
+- **Leadership**: Team Leadership, System Architecture, Agile Delivery  
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package.json
-    └── README.md
+---
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+## 🌱 Side Projects
 
-1.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+- **[Awaneek.com](https://awaneek.com/)** – E-commerce platform with AI legality verification  
+- **[Ammerny.com](https://ammerny.com/)** – Service tracking mobile app  
+- **[Qaf.com](https://qaf.com/)** – Enterprise system for digitizing national-level paperwork  
 
-1.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+---
 
-1.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+## 🎓 Education
 
-1.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/) for more detail).
+**B.S. in Computer Science**  
+UIAM University – GPA: 3.72 / 4.0  
 
-1.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+---
 
-1.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+## 📜 Certifications & IP
 
-1.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
-
-1.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-1.  **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/docs/tutorial/getting-started/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[Build, Deploy, and Host On Netlify](https://netlify.com)
-
-The fastest way to combine your favorite tools and APIs to build the fastest sites, stores, and apps for the web. And also the best place to build, deploy, and host your Gatsby sites.
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+- Holder of 3 Intellectual Property Certificates  
+- Holder of 2 Google Cloud Certifications  
+- Holder of 3 AWS Certifications  
+- Official intellectual property registration completed  

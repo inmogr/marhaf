@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../co
 import { ExternalLink } from "lucide-react";
 import { ScrollArea } from "../components//ui/scroll-area";
 import { Avatar, AvatarFallback, AvatarImage } from "../components//ui/avatar";
-import { Globe, Mail, Phone, Github, Linkedin, GraduationCap, Briefcase, Code, Lightbulb, BookOpen } from "lucide-react";
+import { Globe, Mail, Github, Linkedin, GraduationCap, Briefcase, Code, Lightbulb, BookOpen } from "lucide-react";
 import React from "react";
 
 const resumeOcrData = {
@@ -406,6 +406,11 @@ export default function Home() {
                             </a>
                         </li>
                         <li>
+                            <a href="#technologies" className="hover:text-primary transition-colors">
+                                Technologies
+                            </a>
+                        </li>
+                        <li>
                             <a href="#contact" className="hover:text-primary transition-colors">
                                 Contact
                             </a>
@@ -657,7 +662,7 @@ export default function Home() {
             </section>
 
             {/* Tech Icons Section */}
-            <section id="techicons" className="py-16">
+            <section id="technologies" className="py-16">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-semibold mb-8 text-center">Technologies</h2>
                     <div className="flex flex-wrap justify-center gap-16">

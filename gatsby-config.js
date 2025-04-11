@@ -9,10 +9,11 @@
  */
 module.exports = {
     siteMetadata: {
-        title: `Gatsby Default Starter`,
-        description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-        author: `@gatsbyjs`,
-        siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+        title: "Marhaf Chamie - Senior AI & Software Engineer",
+        description:
+            "Senior Software Engineer with 10 years of hands-on experience delivering full-stack, mobile, and backend systems across fintech, e-commerce, mobility, and SaaS.",
+        author: "Marhaf Chamie",
+        siteUrl: `https://marhafs-portfolio.web.app/`,
     },
     plugins: [
         "gatsby-plugin-react-helmet",
